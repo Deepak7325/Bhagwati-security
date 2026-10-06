@@ -5,15 +5,15 @@ import Icon from "./Icon";
 import useMotion from "../hooks/useMotion";
 export function Brand() {
   return (
-    <Link to="/" className="brand" aria-label="BSDS Security home">
+    <Link to="/" className="brand" aria-label="Bhagwati Security home">
       <span className="brand-mark">
         <Icon name="shield" size={27} />
       </span>
-      <span>
-        Bhagwati Security
+
+      <span className="brand-copy">
+        <span className="brand-title">Bhagwati Security</span>
         <span className="brand-sub">And Detective Services</span>
       </span>
-      <span className="registered">®</span>
     </Link>
   );
 }
@@ -38,7 +38,7 @@ export default function Layout() {
     const outside = (e) => {
       if (!header.current?.contains(e.target)) setOpen(false);
     };
-    const query = matchMedia("(min-width: 801px)");
+    const query = matchMedia("(min-width: 1025px)");
     const close = () => setOpen(false);
     document.addEventListener("keydown", escape);
     document.addEventListener("click", outside);
@@ -82,12 +82,21 @@ export default function Layout() {
             className={open ? "open" : ""}
             aria-label="Main navigation"
           >
-            <NavLink to="/" end>
+            <NavLink to="/" end onClick={() => setOpen(false)}>
               Home
             </NavLink>
-            <NavLink to="/services">Our services</NavLink>
-            <NavLink to="/about">Why BSDS</NavLink>
-            <Button to="/hireguard" onClick={() => setOpen(false)} />
+
+            <NavLink to="/services" onClick={() => setOpen(false)}>
+              Our services
+            </NavLink>
+
+            <NavLink to="/about" onClick={() => setOpen(false)}>
+              About us
+            </NavLink>
+
+            <Button to="/hireguard" onClick={() => setOpen(false)}>
+              Hire your guard
+            </Button>
           </nav>
         </div>
       </header>
