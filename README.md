@@ -1,4 +1,4 @@
-# Aegis Security — professional React website
+# Bhagwati Security and Detective Services
 
 A complete redesigned frontend in React + Vite, with navy/amber styling, bundled guard imagery, responsive navigation, service filters, dedicated service detail pages, parallax, and reduced-motion support.
 
